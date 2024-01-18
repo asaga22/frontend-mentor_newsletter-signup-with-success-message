@@ -1,0 +1,226 @@
+@font-face {
+    font-family: "Roboto";
+    src: url("./assets/fonts/Roboto-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Roboto-Bold";
+    src: url("./assets/fonts/Roboto-Bold.ttf");
+}
+
+body {
+    background-color: hsl(234, 29%, 20%);
+    font-family: "Roboto";
+    color: hsl(235, 18%, 26%);
+    margin: 0px;
+}
+
+main {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    font-size: 16px;
+}
+
+.newsletter-subscription-registration {
+    display: grid;
+    grid-template-columns: 55% 45%;
+    align-items: center;
+    background-color: hsl(0, 0%, 100%);
+    width: 800px;
+    border-radius: 30px;
+}
+
+.newsletter-subscription-registration .sign-up {
+    padding: 20px 20px 20px 40px;
+}
+
+.newsletter-subscription-registration .illustration {
+    padding: 20px;
+}
+
+.newsletter-subscription-registration .sign-up h1 {
+    font-size: 40px;
+    font-family: "Roboto-Bold";
+}
+.newsletter-subscription-registration .illustration img {
+    width: 100%;
+}
+
+button {
+    color: hsl(0, 0%, 100%);
+    border-radius: 5px;
+    border: 0px;
+    background-color: hsl(235, 18%, 26%);
+    width: 100%;
+    padding: 10px 0px;
+    cursor: pointer;
+    font-family: "Roboto-Bold";
+}
+
+button:hover {
+    background-image: linear-gradient(90deg, hsl(346.74, 100%, 66.27%) 0%, hsl(4, 100%, 67%) 50%);
+}
+
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+li img {
+    margin-right: 10px;
+}
+
+.input-group {
+    width: 100%;
+    padding: 20px 0px;
+}
+
+.input-group .input-desc {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-group span {
+    display: block;
+    font-size: 10px;
+    padding: 5px 0px;
+}
+
+.input-group input {
+   padding: 10px;
+   width: calc(100% - 23px);
+   border: 1px solid hsl(0, 0%, 81%);
+   color: hsl(0, 0%, 81%);;
+   border-radius: 5px;
+}
+
+.input-group input:focus {
+    border: 1px solid hsl(235, 18%, 26%);
+    outline-width: 0;
+    outline: none;
+    color: hsl(235, 18%, 26%);
+}
+
+.input-group .input-error-message{
+    display: none;
+}
+
+.input-group.error .input-error-message {
+    color: hsl(4, 100%, 67%);
+    font-family: "Roboto-Bold";
+    display: block;
+}
+
+.input-group.error input {
+    border: 1px solid hsl(4, 100%, 67%);
+    background-color: hsla(4, 100%, 67%, 0.2);
+    color: hsl(4, 100%, 67%);
+}
+
+.text-bold {
+    font-weight: 700;
+}
+
+.alert-wrapper {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    min-height: 100vh;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.alert-wrapper.hidden {
+    visibility: visible;
+    opacity: 0;
+    top: -100px;
+}
+
+.alert-wrapper.shown {
+    visibility: visible;
+    opacity: 1;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.alert {
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 30px;
+    padding: 50px;
+    width: 300px;
+    box-shadow:  0px 0px 10px 1px hsl(0, 0%, 21.2%);
+}
+
+.alert .header .alert-icon {
+    width: 50px;
+    height: 50px;
+}
+
+.alert .header .alert-title{
+    font-family: "Roboto-Bold";
+    font-size: 40px;
+}
+
+.alert .body p {
+    font-size: 14px;
+}
+
+.alert .body {
+    margin-bottom: 40px;
+}
+
+@media (max-width: 575.98px) {
+
+    main {
+        min-height: unset;
+    }
+
+    .newsletter-subscription-registration {
+        grid-template-columns: repeat(1, 1fr);
+        border-radius: 0px;
+    }
+
+    .newsletter-subscription-registration .sign-up {
+        order: 1;
+        padding: 20px 20px 40px 20px;
+    }
+
+    .newsletter-subscription-registration .illustration {
+        order: -1;
+        width: 100%;
+    }
+
+    .newsletter-subscription-registration .illustration {
+        content:url("./assets/images/illustration-sign-up-mobile.svg");
+        padding: 0%;
+    }
+
+    .alert-wrapper {
+        min-height: unset;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+    }
+    
+    .alert {
+        border-radius: 0px;
+        height: fit-content;
+        width: 100%;
+        box-shadow: unset;
+    }
+}
